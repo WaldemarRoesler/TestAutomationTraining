@@ -89,6 +89,7 @@
                     <encoding>UTF-8</encoding>
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                     <testFailureIgnore>true</testFailureIgnore>
+                    <suiteXmlFiles>src/main/resources/basicSeleniumSuite.xml</suiteXmlFiles>
 <!--                    <suiteXmlFiles>src/main/resources/calculatorSuite.xml</suiteXmlFiles>-->
                 </configuration>
             </plugin>

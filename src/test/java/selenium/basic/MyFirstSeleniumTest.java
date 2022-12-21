@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -16,15 +17,23 @@ public class MyFirstSeleniumTest {
     private WebDriver driver;
 
     @BeforeClass
-    public void setUPBrowser(){
-
-        System.setProperty("webdriver.chrome.driver","chromedriver.exe");
+    public void setUpBrowser(ITestContext context) {
+        //Ustalenie ścieżki do chromedriver
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        //Umożliwienie wstrzykiwania własnej zawartości do raportu html
+        System.setProperty("org.uncommons.reportng.escape-output", "false");
+        //Uruchomienie przeglądarki
         driver = new ChromeDriver();
+        //Zapis drivera do kontekstu
+        context.getSuite().setAttribute("driver", driver);
+        //Ustawienie domyślnego timeoutu dla Selenium - program będzie czekał tyle czasu
+        //na KAŻDY element na stronie
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        //Maksymalizacja okna
         driver.manage().window().maximize();
         driver.get("https://automationexercise.com/");
-        //Ustawienie domyslnego timeout-u
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
     }
+
 
     @Test
     public void automationExerciseLanuchTest(){
@@ -35,7 +44,7 @@ public class MyFirstSeleniumTest {
     @Test
     public void automationExerciseLanuchTestFindElements(){
 
-        List<WebElement> headerList = driver.findElements(By.id("header1"));
+        List<WebElement> headerList = driver.findElements(By.id("header"));
         Assert.assertNotEquals(headerList.size(),0, "Header section was not displayed");
 
     }

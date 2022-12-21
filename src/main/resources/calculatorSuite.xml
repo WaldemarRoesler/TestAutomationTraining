@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Calculator Suite">
+    <test name="Sum test">
+        <classes>
+            <class name="CalculatorTest">
+                <methods>
+                    <include name="sumTestPostivie"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Distinction test">
+        <classes>
+            <class name="CalculatorTest">
+                <methods>
+                    <include name="distinctionTestPostive"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

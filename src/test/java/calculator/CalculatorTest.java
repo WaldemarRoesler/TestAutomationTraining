@@ -1,4 +1,6 @@
-import org.example.Calculator;
+package calculator;
+
+import org.example.calculator.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;

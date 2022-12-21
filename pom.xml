@@ -39,6 +39,33 @@
             <version>4.2.2</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.21</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>1.5.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.7.0</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 
@@ -62,7 +89,7 @@
                     <encoding>UTF-8</encoding>
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <suiteXmlFiles>src/main/resources/calculatorSuite.xml</suiteXmlFiles>
+<!--                    <suiteXmlFiles>src/main/resources/calculatorSuite.xml</suiteXmlFiles>-->
                 </configuration>
             </plugin>
         </plugins>
